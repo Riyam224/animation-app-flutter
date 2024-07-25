@@ -1,4 +1,4 @@
-import 'package:animation_app/views/home_view.dart';
+import 'package:animation_app/views/home_2_.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class AnimationApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      home: Home2(),
     );
   }
 }
