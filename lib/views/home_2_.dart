@@ -8,40 +8,27 @@ class Home2 extends StatefulWidget {
 }
 
 class _Home2State extends State<Home2> {
-  bool visible = true;
+  double _padding = 0;
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(
-          children: [
-            const Center(
-              child: Text(
-                'my test',
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-            AnimatedPositioned(
-                duration: const Duration(seconds: 4),
-                bottom: visible == true ? 320 : 00,
-                left: 100,
-                right: 100,
-                child: Container(
-                  width: 199,
-                  height: 100,
-                  color: Color.fromARGB(255, 54, 200, 244),
-                ))
-          ],
+    return Scaffold(
+      body: SafeArea(
+        child: AnimatedPadding(
+          duration: const Duration(seconds: 2),
+          padding: EdgeInsets.all(_padding),
+          child: Container(
+            color: Colors.blue,
+          ),
         ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.play_arrow),
-          onPressed: () {
-            setState(() {
-              visible = !visible;
-            });
-          },
-        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.play_arrow),
+        onPressed: () {
+          setState(() {
+            _padding = _padding == 0 ? 20 : 0;
+          });
+        },
       ),
     );
   }
